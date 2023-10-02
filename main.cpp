@@ -36,7 +36,7 @@ int main() {
 	char g[] = "aaaa";
 	char h[] = "bbb";
 
-	printf("%c\n", Min(g, h));
+	Min(g, h);
 
 	return 0;
 }
