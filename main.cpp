@@ -1,12 +1,11 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 
 template <typename Type>
 Type Min(Type a, Type b) {
-
 	if(a > b) {
 		return a;
 	}
-	else if (a < b) {
+	else {
 		return b;
 	}
 }
@@ -32,10 +31,10 @@ int main() {
 	double e = 30;
 	double f = 20;
 
-	printf("%f\n", Min(e, f));
+	printf("%lf\n", Min(e, f));
 
 	char g[] = "aaaa";
-	char h[] = "bbbb";
+	char h[] = "bbb";
 
 	printf("%c\n", Min(g, h));
 
