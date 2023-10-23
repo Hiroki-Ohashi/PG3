@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int Recursive(int num1, int num2, int num3, int num4, int count) {
+int CalcSalary(int num1, int num2, int num3, int num4, int count) {
 	// 時給
 	printf("%d時間の再帰的時給: %d\n", count, num2);
 
@@ -24,7 +24,7 @@ int Recursive(int num1, int num2, int num3, int num4, int count) {
 	// 時間
 	count++;
 
-	return (num1 + Recursive(num1, num2, num3, num4, count));
+	return (num1 + CalcSalary(num1, num2, num3, num4, count));
 }
 
 int main() {
@@ -35,7 +35,7 @@ int main() {
 	int num4 = 1072;
 	int count = 1;
 
-	Recursive(num1, num2, num3, num4, count);
+	CalcSalary(num1, num2, num3, num4, count);
 
 	return 0;
 }
