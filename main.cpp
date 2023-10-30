@@ -1,30 +1,42 @@
 #include <stdio.h>
 
-int CalcSalary(int num1, int num2, int num3, int num4, int count) {
+int RecursiveCalcSalary(int RecursiveSalary, int RecursiveHourlyWage, int count, int hour) {
 	// 時給
-	printf("%d時間の再帰的時給: %d\n", count, num2);
+	printf("%d時間の再帰的時給: %d\n", count, RecursiveHourlyWage);
 
 	// 再帰的
-	num1 += num2;
+	RecursiveSalary += RecursiveHourlyWage;
 
 	// 給料
-	printf("%d時間の再帰的給料: %d\n", count, num1);
-	num2 = num2 * 2 - 50;
+	printf("%d時間の再帰的給料: %d\n", count, RecursiveSalary);
+	RecursiveHourlyWage = RecursiveHourlyWage * 2 - 50;
 
-	// 一般的
-	num3 += num4;
-
-	printf("%d時間の一般的給料: %d\n", count, num3);
 	printf("\n");
-
-	if (num2 >= num3) {
-		return num2;
-	}
 
 	// 時間
 	count++;
 
-	return (num1 + CalcSalary(num1, num2, num3, num4, count));
+	if (count > hour) {
+		return 0;
+	}
+
+	return (RecursiveSalary + RecursiveCalcSalary(RecursiveSalary, RecursiveHourlyWage, count, hour));
+}
+
+int GeneralCalcSalary(int GeneralSalary, int GeneralHourlyWage, int count, int hour) {
+
+	// 一般的
+	GeneralSalary = GeneralHourlyWage * count;
+
+	printf("%d時間の一般的給料: %d\n", count, GeneralSalary);
+
+	count++;
+
+	if (count > hour) {
+		return 0;
+	}
+
+	return GeneralCalcSalary(GeneralSalary, GeneralHourlyWage, count, hour);
 }
 
 int main() {
@@ -34,8 +46,10 @@ int main() {
 	int GeneralSalary = 0;
 	int GeneralHourlyWage = 1072;
 	int count = 1;
+	int hour = 8;
 
-	CalcSalary(RecursiveSalary, RecursiveHourlyWage, GeneralSalary, GeneralHourlyWage, count);
+	RecursiveCalcSalary(RecursiveSalary, RecursiveHourlyWage, count, hour);
+	GeneralCalcSalary(GeneralSalary, GeneralHourlyWage, count, hour);
 
 	return 0;
 }
