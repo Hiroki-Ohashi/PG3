@@ -29,13 +29,13 @@ int CalcSalary(int num1, int num2, int num3, int num4, int count) {
 
 int main() {
 
-	int num1 = 0;
-	int num2 = 100;
-	int num3 = 0;
-	int num4 = 1072;
+	int RecursiveSalary = 0;
+	int RecursiveHourlyWage = 100;
+	int GeneralSalary = 0;
+	int GeneralHourlyWage = 1072;
 	int count = 1;
 
-	CalcSalary(num1, num2, num3, num4, count);
+	CalcSalary(RecursiveSalary, RecursiveHourlyWage, GeneralSalary, GeneralHourlyWage, count);
 
 	return 0;
 }
