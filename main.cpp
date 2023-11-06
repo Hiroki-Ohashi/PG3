@@ -15,11 +15,9 @@ void Answer(PFunc p, int answer) {
 	// 偶数なら丁
 	if (dice == 0) {
 		printf("丁\n");
-		Sleep(1500);
 	}// 奇数なら半
 	else if (dice != 0) {
 		printf("半\n");
-		Sleep(1500);
 	}
 
 	// どちらも同じ数なら正解
