@@ -10,24 +10,24 @@ void Answer(PFunc p, int answer) {
 	int anticipation = answer % 2;
 	Sleep(3000);
 
-	printf("‰ñ“š:");
+	printf("å›ç­”:");
 
-	// ‹ô”‚È‚ç’š
+	// å¶æ•°ãªã‚‰ä¸
 	if (dice == 0) {
-		printf("’š\n");
+		printf("ä¸\n");
 		Sleep(1500);
-	}// Šï”‚È‚ç”¼
+	}// å¥‡æ•°ãªã‚‰åŠ
 	else if (dice != 0) {
-		printf("”¼\n");
+		printf("åŠ\n");
 		Sleep(1500);
 	}
 
-	// ‚Ç‚¿‚ç‚à“¯‚¶”‚È‚ç³‰ğ
+	// ã©ã¡ã‚‰ã‚‚åŒã˜æ•°ãªã‚‰æ­£è§£
 	if (anticipation == dice) {
-		printf("³\n\n");
+		printf("æ­£\n\n");
 	}
 	else {
-		printf("Œë\n\n");
+		printf("èª¤\n\n");
 	}
 }
 
@@ -37,19 +37,19 @@ int dice() {
 }
 
 int main() {
-	// ƒTƒCƒRƒ‚ğŒˆ’è
+	// ã‚µã‚¤ã‚³ãƒ­ã‚’æ±ºå®š
 	int currentTime = time(nullptr);
 	srand(currentTime);
 
-	// ŠÖ”ƒ|ƒCƒ“ƒ^
+	// é–¢æ•°ãƒã‚¤ãƒ³ã‚¿
 	PFunc pfunc = &dice;
-	// “ü—Í‚µ‚½—\‘z
+	// å…¥åŠ›ã—ãŸäºˆæƒ³
 	int answer;
 
-	printf("’š( 2 )A”¼( 1 )‘I‚×\n\n");
+	printf("ä¸( 2 )ã€åŠ( 1 )é¸ã¹\n\n");
 	while (1) {
-		printf("’š( 2 )A”¼( 1 )‚ğ“ü—Í\n");
-		printf("—\‘z:");
+		printf("ä¸( 2 )ã€åŠ( 1 )ã‚’å…¥åŠ›\n");
+		printf("äºˆæƒ³:");
 		scanf_s("%d", &answer);
 
 		Answer(pfunc, answer);
