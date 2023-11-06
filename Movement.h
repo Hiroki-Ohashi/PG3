@@ -3,5 +3,5 @@
 
 class Movement {
 public:
-	virtual void Move();
+	virtual void Move() = 0;
 };
