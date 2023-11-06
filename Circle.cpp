@@ -2,6 +2,14 @@
 #define _USE_MATH_DEFINES
 #include "math.h"
 
+Circle::Circle()
+{
+}
+
+Circle::~Circle()
+{
+}
+
 void Circle::Size()
 {
 	area = radius * radius * 3.14f;
