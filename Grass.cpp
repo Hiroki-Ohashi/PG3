@@ -10,5 +10,5 @@ Grass::~Grass()
 
 void Grass::Move()
 {
-	printf("草を刈る\n");
+	printf("草を育てる\n");
 }

@@ -10,5 +10,5 @@ Animal::~Animal()
 
 void Animal::Move()
 {
-	printf("動物を狩る\n");
+	printf("動物を育てる\n");
 }
