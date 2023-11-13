@@ -8,7 +8,7 @@ Grass::~Grass()
 {
 }
 
-void Grass::Move()
+void Grass::Grow()
 {
 	printf("草を育てる\n");
 }

@@ -7,6 +7,6 @@ public:
 	Grass();
 	~Grass();
 
-	void Move() override;
+	void Grow() override;
 
 };

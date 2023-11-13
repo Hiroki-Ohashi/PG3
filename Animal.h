@@ -7,6 +7,6 @@ public:
 	Animal();
 	~Animal();
 
-	void Move() override;
+	void Grow() override;
 
 };

@@ -11,7 +11,7 @@ int main() {
 	movement[1] = new Animal();
 
 	for (int i = 0; i < 2; i++) {
-		movement[i]->Move();
+		movement[i]->Grow();
 	}
 
 	for (int i = 0; i < 2; i++) {

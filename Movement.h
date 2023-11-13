@@ -3,5 +3,5 @@
 
 class Movement {
 public:
-	virtual void Move() = 0;
+	virtual void Grow() = 0;
 };

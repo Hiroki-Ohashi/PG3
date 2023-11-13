@@ -8,7 +8,7 @@ Animal::~Animal()
 {
 }
 
-void Animal::Move()
+void Animal::Grow()
 {
 	printf("動物を育てる\n");
 }
