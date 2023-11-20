@@ -4,25 +4,46 @@
 #include <windows.h>
 #include <functional>
 
+void SetTimeout(std::function<void()> result, int second) {
+	Sleep(second * 1000);
+	result();
+}
+
 int main() {
 
-	std::function<void(int, int)> result = [&](int p, int answer) {
-		int dice = p % 2;
-		int anticipation = answer % 2;
-		Sleep(3000);
+	// 予想
+	int answer = 0;
+	int diceResult = rand() % 6 + 1;
 
-		printf("回答:");
+	printf("半( 1 )、丁( 2 )選べ\n\n");
+	printf("半( 1 )、丁( 2 )を入力\n予想:");
+	scanf_s("%d", &answer);
+
+	if (answer == 2) {
+		printf("回答：丁\n");
+	}
+	else if (answer == 1) {
+		printf("回答：半\n");
+	}
+
+	// 正誤判定
+	std::function<void()> result = [&]() {
+
+		// ダイスの結果
+		int diceAnswer = diceResult % 2;
+		// プレイヤー予想
+		int playerAnswer = answer % 2;
 
 		// 偶数なら丁
-		if (dice == 0) {
-			printf("丁\n");
+		if (diceAnswer == 0) {
+			printf("答:丁\n");
 		}// 奇数なら半
-		else if (dice != 0) {
-			printf("半\n");
+		else if (diceAnswer == 1) {
+			printf("答:半\n");
 		}
 
 		// どちらも同じ数なら正解
-		if (anticipation == dice) {
+		if (playerAnswer == diceResult) {
 			printf("結果:正\n\n");
 		}
 		else {
@@ -30,27 +51,9 @@ int main() {
 		}
 	};
 
-	// サイコロを決定
-	int currentTime = time(nullptr);
-	srand(currentTime);
-
-	std::function<int()> dice = [&]() {
-		int result = rand() % 6 + 1;
-		return result;
-	};
-
+	// もったいつける
+	SetTimeout(result,3);
 	
-	// 予想
-	int answer;
-
-	printf("丁( 2 )、半( 1 )選べ\n\n");
-	while (1) {
-		printf("丁( 2 )、半( 1 )を入力\n");
-		printf("予想:");
-		scanf_s("%d", &answer);
-
-		result(dice(), answer);
-	}
 
 	return 0;
 }
