@@ -12,7 +12,11 @@ void SetTimeout(std::function<void()> result, int second) {
 int main() {
 
 	// 予想
-	int answer = 0;
+	int answer;
+	// ダイス
+	// サイコロを決定
+	int currentTime = time(nullptr);
+	srand(currentTime);
 	int diceResult = rand() % 6 + 1;
 
 	printf("半( 1 )、丁( 2 )選べ\n\n");
@@ -29,10 +33,10 @@ int main() {
 	// 正誤判定
 	std::function<void()> result = [&]() {
 
-		// ダイスの結果
-		int diceAnswer = diceResult % 2;
 		// プレイヤー予想
 		int playerAnswer = answer % 2;
+		// ダイスの結果
+		int diceAnswer = diceResult % 2;
 
 		// 偶数なら丁
 		if (diceAnswer == 0) {
