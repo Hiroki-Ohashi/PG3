@@ -1,23 +1,48 @@
 #include <stdio.h>
-#include "IShape.h"
-#include "Circle.h"
-#include "Rectangle.h"
+#include <list>
 
 int main() {
-	IShape* iShape[2];
 
-	iShape[0] = new Circle();
-	iShape[1] = new Rectangle();
+	std::list<const char*> yamanotaLine{"Tokyo", "Kanda", "Akihabara", "Okachimachi", "Ueno", "Uguisugani", "Nippori","Tabata",
+		"Komagome", "Sugamo", "Otsuka", "Ikebukuro", "Mejiro", "Takadanobaba", "Shin-Okubo", "Shinjuku", "Yoyogi", "Harajuku",
+		"Shibuya","Ebisu", "Meguro", "Gotanda", "Osaki", "Shinagawa","Tamachi", "Hamamatsucho", "Shimbashi", "Yurakucho"};
 
-	for (int i = 0; i < 2; i++) {
-		iShape[i]->Size();
-		iShape[i]->Draw();
+	printf("[1970”N]");
+	printf("\n");
+	for (std::list<const char*>::iterator itr = yamanotaLine.begin(); itr != yamanotaLine.end(); itr++) {
+		printf(*itr);
+		printf("\n");
 	}
 
-	for (int i = 0; i < 2; i++) {
-		delete iShape[i];
+	printf("\n");
+
+	printf("[2019”N]\n");
+	printf("\n");
+	for (std::list<const char*>::iterator itr = yamanotaLine.begin(); itr != yamanotaLine.end(); itr++) {
+		if (*itr == "Tabata") {
+			itr = yamanotaLine.insert(itr, "Nishi-Nippori");
+			break;
+		}
 	}
-	
+	for (std::list<const char*>::iterator itr = yamanotaLine.begin(); itr != yamanotaLine.end(); itr++) {
+		printf(*itr);
+		printf("\n");
+	}
+
+	printf("\n");
+
+	printf("[2022”N]\n");
+	for (std::list<const char*>::iterator itr = yamanotaLine.begin(); itr != yamanotaLine.end(); itr++) {
+		if (*itr == "Tamachi") {
+			itr = yamanotaLine.insert(itr, "Takanawa-Gateway");
+			break;
+		}
+	}
+	for (std::list<const char*>::iterator itr = yamanotaLine.begin(); itr != yamanotaLine.end(); itr++) {
+		printf(*itr);
+		printf("\n");
+	}
+	printf("\n");
 
 	return 0;
 }
