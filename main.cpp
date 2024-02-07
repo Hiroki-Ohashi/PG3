@@ -1,30 +1,28 @@
-#include <stdio.h>
-#include <thread>
 #include <iostream>
-
-void thread1() {
-	std::cout << "thread1" << std::endl;
-}
-
-void thread2() {
-	std::cout << "thread2" << std::endl;
-}
-
-void thread3() {
-	std::cout << "thread3" << std::endl;
-}
-
+#include <string>
+#include <chrono>
 
 int main() {
+	// 十万文字
+	std::string a(100000, 'a');
 
-	std::thread th1(thread1);
-	th1.join();
+	// コピーにかかる時間
+	std::string copyTime{};
+	auto copyStart = std::chrono::system_clock::now();
+	copyTime = a;
+	auto copyEnd = std::chrono::system_clock::now();
+	std::chrono::duration<double, std::micro> time1 = copyEnd - copyStart;
 
-	std::thread th2(thread2);
-	th2.join();
+	// 移動にかかる時間
+	std::string moveTime{};
+	auto moveStart = std::chrono::system_clock::now();
+	moveTime = std::move(a);
+	auto moveEnd = std::chrono::system_clock::now();
+	std::chrono::duration<double, std::micro> time2 = moveEnd - moveStart;
 
-	std::thread th3(thread3);
-	th3.join();
+	// 経過時間
+	std::cout << time1.count() << "μs" << std::endl;
+	std::cout << time2.count() << "μs" << std::endl;
 
 	return 0;
 }
