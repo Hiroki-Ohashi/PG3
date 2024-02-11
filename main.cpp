@@ -25,10 +25,9 @@ int main() {
 	// 整頓
 	std::sort(studentIDNumber.begin(), studentIDNumber.end());
 
-	for (std::vector<std::string>::iterator itr = studentIDNumber.begin(); itr != studentIDNumber.end(); itr++) {
-		std::cout << *itr << "\n";
-	}
-	printf("\n");
+	std::for_each(std::begin(studentIDNumber), std::end(studentIDNumber), [](std::string& s) {
+		std::cout << s << std::endl;
+	});
 
 	return 0;
 }
