@@ -22,12 +22,13 @@ int main() {
 		"k022g0122@g.neec.ac.jp","k022g0061@g.neec.ac.jp","k022g0031@g.neec.ac.jp","k022g0076@g.neec.ac.jp","k022g0002@g.neec.ac.jp","k022g0090@g.neec.ac.jp","k022g0074@g.neec.ac.jp","k022g0012@g.neec.ac.jp","k022g0001@g.neec.ac.jp"
 	};
 
-	// ®“Ú
+	// æ•´é “
 	std::sort(studentIDNumber.begin(), studentIDNumber.end());
 
-	for (int i = 0; i < studentIDNumber.size(); i++) {
-		std::cout << studentIDNumber[i] << std::endl;
+	for (std::vector<std::string>::iterator itr = studentIDNumber.begin(); itr != studentIDNumber.end(); itr++) {
+		std::cout << *itr << "\n";
 	}
+	printf("\n");
 
 	return 0;
 }
