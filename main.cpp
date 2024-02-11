@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include "Movement.h"
-#include "Grass.h"
-#include "Animal.h"
+#include "Characters.h"
+#include "Picture.h"
 
 int main() {
 
 	Movement* movement[2];
 
-	movement[0] = new Grass();
-	movement[1] = new Animal();
+	movement[0] = new Characters();
+	movement[1] = new Picture();
 
 	for (int i = 0; i < 2; i++) {
-		movement[i]->Grow();
+		movement[i]->Draw();
 	}
 
 	for (int i = 0; i < 2; i++) {
