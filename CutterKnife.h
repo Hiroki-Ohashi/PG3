@@ -1,11 +1,11 @@
 #pragma once
 #include "Tool.h"
 
-class Cutter : public Tool {
+class CutterKnife : public Tool {
 public:
 
-	Cutter();
-	~Cutter();
+	CutterKnife();
+	~CutterKnife();
 
 	void Cut() override;
 

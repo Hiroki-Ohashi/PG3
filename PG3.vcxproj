@@ -130,12 +130,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Scissors.cpp" />
-    <ClCompile Include="Cutter.cpp" />
+    <ClCompile Include="CutterKnife.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scissors.h" />
-    <ClInclude Include="Cutter.h" />
+    <ClInclude Include="CutterKnife.h" />
     <ClInclude Include="Tool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
