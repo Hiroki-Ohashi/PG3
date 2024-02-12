@@ -1,7 +1,7 @@
 #pragma once
-#include "Cutting.h"
+#include "Tool.h"
 
-class Scissors : public Cutting {
+class Scissors : public Tool {
 public:
 
 	Scissors();

@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 
-class Cutting {
+class Tool {
 public:
 	virtual void Cut() = 0;
 };

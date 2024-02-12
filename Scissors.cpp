@@ -1,14 +1,14 @@
-#include "Cutter.h"
+#include "Scissors.h"
 
-Cutter::Cutter()
+Scissors::Scissors()
 {
 }
 
-Cutter::~Cutter()
+Scissors::~Scissors()
 {
 }
 
-void Cutter::Cut()
+void Scissors::Cut()
 {
-	printf("カッターで切る\n");
+	printf("はさみで切る\n");
 }

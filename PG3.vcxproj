@@ -129,14 +129,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Picture.cpp" />
     <ClCompile Include="Scissors.cpp" />
+    <ClCompile Include="Cutter.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scissors.h" />
     <ClInclude Include="Cutter.h" />
-    <ClInclude Include="Cutting.h" />
+    <ClInclude Include="Tool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

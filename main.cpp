@@ -1,21 +1,21 @@
 #include <stdio.h>
-#include "Cutting.h"
+#include "Tool.h"
 #include "Cutter.h"
 #include "Scissors.h"
 
 int main() {
 
-	Cutting* cutting[2];
+	Tool* tool[2];
 
-	cutting[0] = new Cutter();
-	cutting[1] = new Scissors();
+	tool[0] = new Cutter();
+	tool[1] = new Scissors();
 
 	for (int i = 0; i < 2; i++) {
-		cutting[i]->Cut();
+		tool[i]->Cut();
 	}
 
 	for (int i = 0; i < 2; i++) {
-		delete cutting[i];
+		delete tool[i];
 	}
 
 	return 0;
