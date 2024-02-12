@@ -130,13 +130,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Picture.cpp" />
-    <ClCompile Include="Characters.cpp" />
+    <ClCompile Include="Scissors.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Picture.h" />
-    <ClInclude Include="Characters.h" />
-    <ClInclude Include="Movement.h" />
+    <ClInclude Include="Scissors.h" />
+    <ClInclude Include="Cutter.h" />
+    <ClInclude Include="Cutting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,14 +1,14 @@
-#include "Picture.h"
+#include "Scissors.h"
 
-Picture::Picture()
+Scissors::Scissors()
 {
 }
 
-Picture::~Picture()
+Scissors::~Scissors()
 {
 }
 
-void Picture::Draw()
+void Scissors::Cut()
 {
-	printf("絵を描く\n");
+	printf("はさみで切る\n");
 }

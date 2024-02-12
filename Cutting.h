@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 
-class Movement {
+class Cutting {
 public:
-	virtual void Draw() = 0;
+	virtual void Cut() = 0;
 };
